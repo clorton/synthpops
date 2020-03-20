@@ -6,6 +6,12 @@ Synthetic populations generation functions.
 
 `python setup.py develop`
 
+Alternatively, on Linux/Mac, you can use the dev_bootstrap script
+
+```bash
+source dev_bootstrap.sh
+```
+
 ## Requirements
 
 NOTE: this module needs to load in data in order to function. To set the data location, do
