@@ -160,11 +160,11 @@ def make_contacts_without_social_layers_152(popdict, n_contacts_dic, location, s
 
     """
 
-    uids_by_age_dic = get_uids_by_age_dic(popdict)
+    uids_by_age_dic = get_uids_by_age_dictionary(popdict)
     age_bracket_distr = spdata.read_age_bracket_distr(datadir, location=location, state_location=state_location, country_location=country_location)
     age_brackets = spdata.get_census_age_brackets(datadir, state_location=state_location, country_location=country_location)
     num_agebrackets = len(age_brackets)
-    age_by_brackets_dic = get_age_by_brackets_dic(age_brackets)
+    age_by_brackets_dic = get_age_by_brackets_dictionary(age_brackets)
 
     age_mixing_matrix_dic = spdata.get_contact_matrix_dic(datadir, sheet_name=sheet_name)
     age_mixing_matrix_dic['M'] = combine_matrices(age_mixing_matrix_dic, n_contacts_dic, num_agebrackets)  # may need to normalize matrices before applying this method to K. Prem et al matrices because of the difference in what the raw matrices represent
@@ -223,11 +223,11 @@ def make_contacts_with_social_layers_152(popdict, n_contacts_dic, location, stat
 
     """
 
-    uids_by_age_dic = get_uids_by_age_dic(popdict)
+    uids_by_age_dic = get_uids_by_age_dictionary(popdict)
     age_bracket_distr = spdata.read_age_bracket_distr(datadir, location=location, state_location=state_location, country_location=country_location)
     age_brackets = spdata.get_census_age_brackets(datadir, state_location=state_location, country_location=country_location)
     num_agebrackets = len(age_brackets)
-    age_by_brackets_dic = get_age_by_brackets_dic(age_brackets)
+    age_by_brackets_dic = get_age_by_brackets_dictionary(age_brackets)
 
     age_mixing_matrix_dic = spdata.get_contact_matrix_dic(datadir, sheet_name=sheet_name)
     age_mixing_matrix_dic['M'] = combine_matrices(age_mixing_matrix_dic, n_contacts_dic, num_agebrackets)  # may need to normalize matrices before applying this method to K. Prem et al matrices because of the difference in what the raw matrices represent
@@ -376,14 +376,14 @@ def make_contacts_without_social_layers_and_sex(popdict, n_contacts_dic, locatio
     """
 
     # using a flat contact matrix
-    uids_by_age_dic = spsamp.get_uids_by_age_dic(popdict)
+    uids_by_age_dic = spsamp.get_uids_by_age_dictionary(popdict)
     if country_location is None:
         raise NotImplementedError
 
     age_bracket_distr = spdata.read_age_bracket_distr(datadir, location=location, state_location=state_location, country_location=country_location)
     gender_fraction_by_age = spdata.read_gender_fraction_by_age_bracket(datadir, location=location, state_location=state_location, country_location=country_location)
     age_brackets = spdata.get_census_age_brackets(datadir, state_location=state_location, country_location=country_location)
-    age_by_brackets_dic = get_age_by_brackets_dic(age_brackets)
+    age_by_brackets_dic = get_age_by_brackets_dictionary(age_brackets)
     num_agebrackets = len(age_brackets)
 
     age_mixing_matrix_dic = spdata.get_contact_matrix_dic(datadir, sheet_name)
@@ -442,14 +442,14 @@ def make_contacts_with_social_layers_and_sex(popdict, n_contacts_dic, location, 
     """
 
     # use a contact matrix dictionary and n_contacts_dic for the average number of contacts in each layer
-    uids_by_age_dic = get_uids_by_age_dic(popdict)
+    uids_by_age_dic = get_uids_by_age_dictionary(popdict)
     if country_location is None:
         raise NotImplementedError
 
     age_bracket_distr = spdata.read_age_bracket_distr(datadir, location=location, state_location=state_location, country_location=country_location)
     gender_fraction_by_age = spdata.read_gender_fraction_by_age_bracket(datadir, location=location, state_location=state_location, country_location=country_location)
     age_brackets = spdata.get_census_age_brackets(datadir, state_location=state_location, country_location=country_location)
-    age_by_brackets_dic = get_age_by_brackets_dic(age_brackets)
+    age_by_brackets_dic = get_age_by_brackets_dictionary(age_brackets)
     num_agebrackets = len(age_brackets)
 
     age_mixing_matrix_dic = spdata.get_contact_matrix_dic(datadir, sheet_name)

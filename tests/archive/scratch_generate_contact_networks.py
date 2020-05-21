@@ -53,7 +53,7 @@ country_location = 'usa'
 use_bayesian = False
 
 age_brackets = sp.get_census_age_brackets(datadir,country_location,use_bayesian)
-age_by_brackets_dic = sp.get_age_by_brackets_dic(age_brackets)
+age_by_brackets_dic = sp.get_age_by_brackets_dictionary(age_brackets)
 
 num_agebrackets = 18
 contact_matrix_dic = sp.get_contact_matrix_dic(datadir,state_location,num_agebrackets)
@@ -81,7 +81,7 @@ if create_homes:
 
     syn_ages,syn_sexes = sp.get_usa_age_sex_n(location,state_location,totalpop)
     syn_age_count = Counter(syn_ages)
-    syn_age_distr = sp.norm_dic(Counter(syn_ages))
+    syn_age_distr = sp.normalize_dictionary(Counter(syn_ages))
 
 
     N = Nhomes
@@ -142,7 +142,7 @@ school_sizes_count = sp.get_school_sizes_by_bracket(datadir,location)
 # print(school_sizes_count)
 
 
-# uids_by_age_dic = sp.get_ids_by_age_dic(age_by_uid_dic)
+# uids_by_age_dic = sp.get_ids_by_age_dictionary(age_by_uid_dic)
 
 
 # create_work_and_school = True

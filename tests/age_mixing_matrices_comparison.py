@@ -353,7 +353,7 @@ if __name__ == '__main__':
             contacts = sp.trim_contacts(contacts, trimmed_size_dic=trimmed_size_dic, use_clusters=False)
 
     age_brackets = sp.get_census_age_brackets(datadir, state_location=state_location, country_location=country_location)
-    age_by_brackets_dic = sp.get_age_by_brackets_dic(age_brackets)
+    age_by_brackets_dic = sp.get_age_by_brackets_dictionary(age_brackets)
 
     ages = []
     for uid in contacts:

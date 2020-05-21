@@ -72,7 +72,7 @@ if __name__ == '__main__':
                 n_contacts_count[ages[p]] += n_contacts
 
         age_brackets = sp.get_census_age_brackets(sp.datadir,state_location='Washington',country_location='usa')
-        age_by_brackets_dic = sp.get_age_by_brackets_dic(age_brackets)
+        age_by_brackets_dic = sp.get_age_by_brackets_dictionary(age_brackets)
 
         aggregate_age_count = sp.get_aggregate_ages(age_count, age_by_brackets_dic)
         aggregate_matrix = symmetric_matrix.copy()

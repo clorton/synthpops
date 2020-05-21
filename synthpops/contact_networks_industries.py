@@ -227,7 +227,7 @@ def get_establishment_size_brackets_df(datadir, locations, state_location='Washi
 #     size_distr_by_label_dic = {}
 #     for label in labels:
 #         size_distr_by_label_dic[label] = d[d['Enterprise Size'] == label]['Establishments'].values[0]
-#     return norm_dic(size_distr_by_label_dic)
+#     return normalize_dictionary(size_distr_by_label_dic)
 
 
 # def generate_workplace_sizes_and_industries(establishments_df, size_label_df, size_label_to_bracket_dic, size_distr_by_label_dic):
@@ -265,7 +265,7 @@ def generate_synthetic_population_with_workplace_industries(n, datadir,location=
 
     """
     age_brackets = spdata.get_census_age_brackets(datadir,state_location,country_location)
-    age_by_brackets_dic = get_age_by_brackets_dic(age_brackets)
+    age_by_brackets_dic = get_age_by_brackets_dictionary(age_brackets)
 
     num_agebrackets = len(age_brackets)
     contact_matrix_dic = spdata.get_contact_matrix_dic(datadir,sheet_name)

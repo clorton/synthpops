@@ -56,7 +56,7 @@ def test_plot_generated_contact_matrix(setting_code='H', n=5000, aggregate_flag=
                                 network_distr_args=network_distr_args)
 
     age_brackets = sp.get_census_age_brackets(datadir, state_location=state_location, country_location=country_location)
-    age_by_brackets_dic = sp.get_age_by_brackets_dic(age_brackets)
+    age_by_brackets_dic = sp.get_age_by_brackets_dictionary(age_brackets)
 
     ages = []
     for uid in contacts:
@@ -90,7 +90,7 @@ def test_plot_generated_trimmed_contact_matrix(setting_code='H', n=5000, aggrega
     contacts = sp.trim_contacts(contacts, trimmed_size_dic=None, use_clusters=False)
 
     age_brackets = sp.get_census_age_brackets(datadir, state_location=state_location, country_location=country_location)
-    age_by_brackets_dic = sp.get_age_by_brackets_dic(age_brackets)
+    age_by_brackets_dic = sp.get_age_by_brackets_dictionary(age_brackets)
 
     ages = []
     for uid in contacts:

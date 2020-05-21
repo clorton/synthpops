@@ -21,7 +21,7 @@ def test_all(location='seattle_metro',state_location='Washington',country_locati
     gender_fraction_by_age = sp.read_gender_fraction_by_age_bracket(dropbox_path,location,state_location,country_location)
     age_brackets_filepath = sp.get_census_age_brackets_path(dropbox_path,state_location,country_location)
     age_brackets = sp.get_age_brackets_from_df(age_brackets_filepath)
-    age_by_brackets_dic = sp.get_age_by_brackets_dic(age_brackets)
+    age_by_brackets_dic = sp.get_age_by_brackets_dictionary(age_brackets)
 
     ### Test selecting an age and sex for an individual ###
     a,s = sp.get_age_sex(gender_fraction_by_age,age_bracket_distr,age_brackets)
@@ -144,7 +144,7 @@ def test_generate_all_households(location='seattle_metro', state_location='Washi
 
     age_brackets_filepath = sp.get_census_age_brackets_path(datadir, state_location, country_location)
     age_brackets = sp.get_age_brackets_from_df(age_brackets_filepath)
-    age_by_brackets_dic = sp.get_age_by_brackets_dic(age_brackets)
+    age_by_brackets_dic = sp.get_age_by_brackets_dictionary(age_brackets)
 
     contact_matrix_dic = sp.get_contact_matrix_dic(datadir, sheet_name='United States of America')
 
@@ -208,7 +208,7 @@ def test_send_students_to_school(location='seattle_metro', state_location='Washi
 
     age_brackets_filepath = sp.get_census_age_brackets_path(datadir, state_location, country_location)
     age_brackets = sp.get_age_brackets_from_df(age_brackets_filepath)
-    age_by_brackets_dic = sp.get_age_by_brackets_dic(age_brackets)
+    age_by_brackets_dic = sp.get_age_by_brackets_dictionary(age_brackets)
 
     contact_matrix_dic = sp.get_contact_matrix_dic(datadir, sheet_name='United States of America')
 

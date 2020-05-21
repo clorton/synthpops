@@ -10,7 +10,7 @@ if __name__ == '__main__':
     dic[2] = 0
 
     distr = dic
-    # distr = sp.norm_dic(dic)
+    # distr = sp.normalize_dictionary(dic)
     print(distr)
     sorted_keys = sorted(distr.keys())
     print(sorted_keys)

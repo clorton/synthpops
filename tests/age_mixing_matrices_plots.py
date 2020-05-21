@@ -148,7 +148,7 @@ def plot_generated_contact_matrix(datadir, n, location='seattle_metro', state_lo
     contacts = sp.make_contacts(popdict, country_location=country_location, state_location=state_location, location=location, options_args=options_args, network_distr_args=network_distr_args)
 
     age_brackets = sp.get_census_age_brackets(datadir, state_location=state_location, country_location=country_location)
-    age_by_brackets_dic = sp.get_age_by_brackets_dic(age_brackets)
+    age_by_brackets_dic = sp.get_age_by_brackets_dictionary(age_brackets)
 
     ages = []
     for uid in contacts:
@@ -175,7 +175,7 @@ def plot_generated_trimmed_contact_matrix(datadir, n, location='seattle_metro', 
     contacts = sp.trim_contacts(contacts, trimmed_size_dic=trimmed_size_dic, use_clusters=False)
 
     age_brackets = sp.get_census_age_brackets(datadir, state_location=state_location, country_location=country_location)
-    age_by_brackets_dic = sp.get_age_by_brackets_dic(age_brackets)
+    age_by_brackets_dic = sp.get_age_by_brackets_dictionary(age_brackets)
 
     ages = []
     for uid in contacts:
@@ -197,7 +197,7 @@ def plot_data_contact_matrix(datadir, location='seattle_metro', state_location='
     asymmetric_M = sp.get_contact_matrix(datadir, setting_code, sheet_name=sheet_name)
 
     age_brackets = sp.get_census_age_brackets(datadir, state_location=state_location, country_location=country_location)
-    age_by_brackets_dic = sp.get_age_by_brackets_dic(age_brackets)
+    age_by_brackets_dic = sp.get_age_by_brackets_dictionary(age_brackets)
 
     cmap = mplt.cm.get_cmap(cmocean.cm.matter_r)
 

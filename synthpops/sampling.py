@@ -24,7 +24,7 @@ def sample_single(distr):
         A single sampled value from a distribution.
     """
     if type(distr) == dict:
-        # distr = norm_dic(distr)
+        # distr = normalize_dictionary(distr)
         sorted_keys = sorted(distr.keys())
         # sorted_distr = [distr[k] for k in sorted_keys]
         # n = np.random.multinomial(1, sorted_distr, size=1)[0]
@@ -133,8 +133,8 @@ def sample_n(nk, distr):
         A dictionary with the count for n samples from a distribution
     """
     if type(distr) == dict:
-        # distr = sp.norm_dic(distr)
-        distr = norm_dic(distr)
+        # distr = sp.normalize_dictionary(distr)
+        distr = normalize_dictionary(distr)
         sorted_keys = sorted(distr.keys())
         sorted_distr = [distr[k] for k in sorted_keys]
         n = np.random.multinomial(nk, sorted_distr, size=1)[0]
@@ -482,7 +482,7 @@ def get_usa_sex_n(datadir, ages, location='seattle_metro', state_location='Washi
 
     gender_fraction_by_age = spdata.read_gender_fraction_by_age_bracket(datadir, location, state_location, country_location)
     age_brackets = spdata.get_census_age_brackets(datadir, state_location, country_location)
-    age_by_brackets_dic = spdata.get_age_by_brackets_dic(age_brackets)
+    age_by_brackets_dic = spdata.get_age_by_brackets_dictionary(age_brackets)
 
     age_count = Counter(ages)
     bracket_count = get_aggregate_ages(age_count, age_by_brackets_dic)
